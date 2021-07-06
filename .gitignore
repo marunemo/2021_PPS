@@ -1,0 +1,8 @@
+# Garbage
+
+.DS_Store
+.vscode
+
+# execute
+
+*.out
