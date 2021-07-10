@@ -3,6 +3,10 @@
 .DS_Store
 .vscode
 
+# For send
+
+*.zip
+
 # execute
 
 *.out
