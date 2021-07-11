@@ -8,8 +8,10 @@ if [ $1 ]; then
 		zip ${name}_$(date +%Y%m%d).zip $1_*
 	elif [ "$2" == "py" ]; then
 		touch $1_${name}_$(date +%Y%m%d).py
-	else
+	elif [ "$2" == "cpp" ]; then
 		touch $1_${name}_$(date +%Y%m%d).cpp
+	else
+		touch $1_${name}_$(date +%Y%m%d).py
 	fi
 else
 	echo "No arg"
