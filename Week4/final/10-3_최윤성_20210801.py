@@ -1,14 +1,18 @@
 class Solution(object):
     def hasPathSum(self, root, targetSum):
-        if not root.left and not root.right:
-            return root.val == targetSum
+        if not root:
+            return False
         
-        if root.left:
-            root.left.val += root.val
-            if Solution.hasPathSum(root.left, targetSum):
-                return True
-        if root.right:
-            root.right.val += root.val
-            if Solution.hasPathSum(root.right, targetSum):
+        queue = [root]
+        while queue:
+            node = queue.pop(0)
+            if node.left or node.right:
+                if node.left:
+                    node.left.val += node.val
+                    queue.append(node.left)
+                if node.right:
+                    node.right.val += node.val
+                    queue.append(node.right)
+            elif node.val == targetSum:
                 return True
         return False
